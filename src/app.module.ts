@@ -3,6 +3,7 @@ import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ProductsModule } from './products/products.module';
 import { SeedModule } from './seed/seed.module';
+import { FilesModule } from './files/files.module';
 
 @Module({
   imports: [
@@ -17,8 +18,11 @@ import { SeedModule } from './seed/seed.module';
       autoLoadEntities: true,
       synchronize: true,
     }),
+
+    
     ProductsModule,
     SeedModule,
+    FilesModule,
   ]
 })
 export class AppModule {}
