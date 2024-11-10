@@ -30,4 +30,14 @@ export class User {
         default: ['user']
     })
     roles: string[];
+
+    @BeforeInsert()
+    checkFieldsBeforeInsert() {
+        this.email = this.email.toLowerCase().trim();
+    }
+
+    @BeforeUpdate()
+    checkFieldsBeforeUpdate() {
+        this.checkFieldsBeforeInsert();   
+    }
 }
