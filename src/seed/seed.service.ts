@@ -8,6 +8,7 @@ export class SeedService {
 
   constructor(
     private readonly productsService: ProductsService
+    
   ) {}
 
 
@@ -25,9 +26,11 @@ export class SeedService {
 
     const insertPromises = [];
 
+    /*
     products.forEach( product => {
       insertPromises.push( this.productsService.create( product ) );
     });
+    */
 
     await Promise.all( insertPromises );
 
